@@ -53,8 +53,3 @@ example_post:
   return: json
   verify: False
 ```
-
-
-
-
-(c)Mateshev Evgenii
