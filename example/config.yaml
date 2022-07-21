@@ -1,0 +1,8 @@
+stage1:
+  method: get
+  print_response: True
+  print_requests: True
+  verify: False
+  url: https://google.com
+  payload: ""
+  return: text
