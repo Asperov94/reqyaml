@@ -25,7 +25,9 @@ class Reqyml:
         self.headers = single_config["headers"] if "headers" in single_config else None
         self.response_type = single_config["return"] if "return" in single_config else "text"
         self.verify = single_config["verify"] if "verify" in single_config else True
-        self.print_requests = \
+        self.print_request = \
+            single_config["print_requests"] if "print_requests" in single_config else False
+        self.print_response = \
             single_config["print_requests"] if "print_requests" in single_config else False
 
 
@@ -56,9 +58,9 @@ class Reqyml:
                 headers = self.headers
             )
         if self.print_request:
-            self.print_request()
+            self.print_request_method()
         if self.print_response:
-            self.print_response()
+            self.print_response_method()
         return self.response_return()
 
 
@@ -71,7 +73,7 @@ class Reqyml:
         if self.response_type == "json":
             return self.response.json()
         if self.response_type == "text":
-            return self.response.text()
+            return self.response.text
 
 
     def all(self) -> list:
@@ -102,7 +104,7 @@ class Reqyml:
         return ret
 
 
-    def print_request(self) -> None:
+    def print_request_method(self) -> None:
         """Print request
         """
         print("====REQUEST====")
@@ -112,7 +114,7 @@ class Reqyml:
         print("===============")
 
 
-    def print_response(self) -> None:
+    def print_response_method(self) -> None:
         """_summary_
         """
         print("====RESPONSE====")

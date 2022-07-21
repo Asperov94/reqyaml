@@ -19,6 +19,13 @@ install Requirements.
 pip3 install -r requirements.txt
 ``` 
 
+### Code Example
+``` 
+from reqyml import Reqyml
+
+x = Reqyml("example/config.yaml")
+x.script("stage1")
+``` 
 
 
 ### Using file config:  

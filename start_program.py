@@ -8,6 +8,7 @@ def createParser ():
     parser = argparse.ArgumentParser()
     parser.add_argument ('-f', '--file',default='config.yaml')
     parser.add_argument ('-s', '--script',default='all')
+    parser.add_argument ('-v', '--verbose')
     return parser
 
 
